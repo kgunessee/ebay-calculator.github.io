@@ -1,0 +1,28 @@
+input.light-mode{
+    color: rgb(212, 212, 212)
+}
+
+table.light-mode, th.light-mode, td.light-mode{
+    color: rgb(214, 214, 214);
+    background-color: rgb(17, 17, 17);
+}
+
+body.light-mode{
+    background-color: rgb(35, 39, 48);
+}
+
+input.light-mode{
+    background-color: rgb(70, 70, 70);
+    color: rgb(245, 245, 245);
+}
+
+.calculate-button.light-mode{
+    background-color: black;
+}
+.total-price-cost.light-mode{
+    color: rgb(245, 245, 245);
+}
+
+.icons.light-mode{
+    top: -2.5em;
+}

@@ -1,0 +1,47 @@
+@media (max-width: 1170px){
+    main{
+        flex-direction: column;
+    }
+
+    .container {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 660px){
+    button, .calculate-button, .courierBtn{
+        font-size: 0.8em;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 450px){
+    .theme-button{
+        display: inline;
+        position: relative;
+          background-color: white;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .theme-toggle{
+        position: absolute;
+        left: 0;
+        background-color: black;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        transform: scale(0.9);
+        transition: 0.4s;
+        overflow: hidden;
+    }
+    
+    .theme-toggle-active{
+        left: 0;
+    }
+}

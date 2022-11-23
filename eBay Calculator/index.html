@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="light-mode.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="icon" href="./Capture.png">
+
+</head>
+
+<body>
+    <header>
+
+        <div class="main-header">
+            <h1>eBay Cost Calculator</h1>
+            <div class="theme-button">
+                <div class="theme-toggle">
+                    <div class="icons">
+                        <span class="material-symbols-outlined"> brightness_5 </span>
+                        <span class="material-symbols-outlined"> dark_mode </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+    </header>
+    
+    <main>
+    
+        <div class="container">
+
+        <div class="calculate-button">
+                <button class="calculate" onclick="calc()">Calculate</button>
+                <h3 class="total-price-cost"></h3>
+            </div>
+
+            <h4>Cost Price</h4>
+            <input type="number" class="costPrice"></input>
+
+            <h4>VAT %</h4>
+            <input type="number" value="1.2" class="vat"></input>
+
+            <h4>eBay Fee %</h4>
+            <input type="number" value="10.90" class="ebay"></input>
+            
+            <h4>eBay Promotion %</h4>
+
+            <div class="ebay-flex">
+                <input type="number" class="ebayPromotion" value="0"></input>
+                <h6 onclick="ebayValue()">&#8634</h6>
+            </div>
+            
+            <p class="error-message em-ep">eBay Promtion can't be blank. Input a number or set to 0.</p>
+            <h4>Courier Price</h4>
+
+            <div class="shipping">
+                <button class="courierBtn evriPack48" onclick="evriPack48()">Evri 48 Packet</button>
+                <button class="courierBtn evriPar48" onclick="evriPar48()">Evri 48 Parcel</button>
+                <button class="courierBtn evriPack24" onclick="evriPack24()">Evri 24 Packet</button>
+                <button class="courierBtn evriPar24" onclick="evriPar24()">Evri 24 Parcel</button>
+
+                <div class="dropdown">
+                    <button class="courierBtn rm48Ll" >Royal Mail 48 LL</button>
+                    <div class="RM48-LL DD-Btn">
+                        <button class="dropdownBtn" onclick="rm48Ll1()">0-100g</button>
+                        <button class="dropdownBtn" onclick="rm48Ll2()">101-250g</button>
+                        <button class="dropdownBtn" onclick="rm48Ll3()">251-500g</button>
+                        <button class="dropdownBtn" onclick="rm48Ll4()">501-750</button>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+
+                    <button class="courierBtn rm48Ll" >Royal Mail 24 LL</button>
+                    <div class="RM24-LL DD-Btn">
+                        <button class="dropdownBtn" onclick="rm24Ll1()">0-100g</button>
+                        <button class="dropdownBtn" onclick="rm24Ll2()">101-250g</button>
+                        <button class="dropdownBtn" onclick="rm24Ll3()">251-500g</button>
+                        <button class="dropdownBtn" onclick="rm24Ll4()">501-750</button>
+                    </div>
+
+                </div>
+            
+                <button class="courierBtn rmT48" onclick="rmT48()">RM Tracked 48</button>
+                <button class="courierBtn PF24" onclick="PF24()">Parcelforce 24</button>
+                <button class="courierBtn DPD" onclick="DPD()">DPD</button>
+
+            </div>
+        
+
+            <div class="courier-display">
+                <h5 class="courier-type"></h5>
+                <input type="number" class="courier"></input>
+            </div>
+
+        <h4>Profit Margin %</h4>
+
+        <div class="profit-percent">
+            <button class="profit-btn" onclick="profit0()">0%</button>
+            <button class="profit-btn" onclick="profit10()">10%</button>
+            <button class="profit-btn" onclick="profit15()">15%</button>
+            <button class="profit-btn" onclick="profit20()">20%</button>
+            <input type="number" class="profit-input" value="0"></input>
+            <h6 onclick="profit0()">&#8634</h6>
+        </div>
+
+        <p class="error-message em-pm">Profit Margin can't be blank. Input a number or set to 0.</p>
+            
+        </div>
+
+
+
+        <aside>
+
+            <p><a href="https://www.ebay.co.uk/help/selling/fees-credits-invoices/fees-business-sellers?id=4809#section4" target="_blank" title="eBay Listing Fees" >See the full list here</a></p>
+            <table >
+                <tr  >
+                    <th>Category</th>
+                    <th>Fee(%)</th>
+                </tr>
+                <tr >
+                    <td ><strong>Instruments & DJ Equipment</strong></td>
+                    <td >10.9%</td>
+                </tr>
+                <tr>
+                    <td ><strong>Sound & Vision</strong></td>
+                    <td >6.9%</td>
+                </tr>
+                <tr><strong>
+                    <td ><strong>Home, Furniture & DIY, except subcategories below:</strong></td>
+                    <td >11.9% up to £650</td>
+                
+                </tr>
+                <tr>
+                    <td >
+                        <ul>
+                            <li>Appliances</li>
+                            <li>DIY Tools & Workshop Equipment
+                            </li>
+                            <li>Kitchen Scales
+                            </li>
+                            <li>Paint Sprayers
+                            </li>
+                            <li>Smart Speakers
+
+                            </li>
+                        </ul>
+                    </td>
+                    <td >
+                        <ul>
+                        <li>6.9% for the portion of the total amount of the sale up to £400 (calculated per item)</li>
+                        <li>2% for the portion of the total amount of the sale above £400</li>
+                
+                    </ul>
+                </td>
+                </tr>
+                <td >
+                    <ul>
+                        <li>Electrical Socket Adapters & Converters</li>
+                        <li>Power Strips & Surge Protectors</li>
+                    </ul>
+                    </td>
+                    <td >
+                    <ul>
+                        <li>9.9% for the portion of the total amount of the sale up to £250 (calculated per item)</li>
+                        <li>7.9% for the portion of the total amount of the sale above £250</li>
+                    </ul>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <ul>
+                            <li>Furniture</li>
+                            <li>Bath</li>
+                            <li>Other Home Plumbing & Fixtures
+                            </li>
+                            <li>Shower Pumps
+                            </li>
+                            <li>Frying & Grill Pans
+                            </li>
+                        </ul>
+                    </td>
+                    <td >
+                        <ul>
+                            <li>6.9% for the portion of the total amount of the sale up to £400 (calculated per item)</li>
+                            <li>2% for the portion of the total amount of the sale above £400</li>
+                        </ul>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td >
+                        <strong>Health & Beauty, except subcategories below:</strong>
+                    </td>
+                    <td >10.9%</td>
+                </tr>
+                <tr>
+                    <td >
+                        <ul>
+                            <li>Hair Extensions & Wigs</li>
+                        </ul>
+                    </td>
+                    <td >11.9%</td>
+                </tr>
+                <tr>
+                    <td >
+                        <ul>
+                            <li>Electronic Smoking, Parts & Accessories</li>
+                            <li>Vaporizers</li>
+                        </ul>
+                    </td>
+                    <td >12.9%</td>
+                </tr>
+
+            </table>
+        </aside>
+
+    </main>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
